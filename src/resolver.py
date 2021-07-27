@@ -7,17 +7,15 @@ ScriptLocator = namedtuple('ScriptLocator', 'name path')
 
 def find_script_with_name(name: str) -> str:
     files_with_name = list(filter(lambda x: x.name == name, _find_scripts()))
-    _verify_matching_scripts(files_with_name)
+    _verify_matching_scripts(name, files_with_name)
     return files_with_name[0].path
 
-def _verify_matching_scripts(scripts):
+def _verify_matching_scripts(script_name, scripts):
     scripts_count = len(scripts)
     if (scripts_count == 0):
-        # TODO: throw error
-        pass
+        raise InvalidScriptNameError(script_name)
     elif (scripts_count > 1):
-        # TODO: throw error
-        pass
+        raise ConflictingScriptNamesError(script_name, scripts)
 
 def _find_scripts():
     scripts_location = os.environ['SCRIPTER_SCRIPTS']
@@ -34,7 +32,12 @@ def _is_script(path: Path):
     return path.suffix in ['.ps1', '.py', '.js', '.sh']
 
 class InvalidScriptNameError(Exception):
-    pass
+    def __init__(self, filename):
+        super()
+        self.filename = filename
 
 class ConflictingScriptNamesError(Exception):
-    pass
+    def __init__(self, filename, conflicting_paths):
+        super()
+        self.filename = filename
+        self.conflicting_paths = conflicting_paths

@@ -8,4 +8,6 @@
 
 ## Running tests
 
+`pipenv run test`
+
 ## Formatting

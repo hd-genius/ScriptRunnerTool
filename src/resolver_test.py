@@ -4,7 +4,7 @@ from pathlib import Path
 import os
 from pyfakefs.fake_filesystem_unittest import TestCase
 from parameterized import parameterized
-from .resolver import find_script_with_name, InvalidScriptNameError, ConflictingScriptNamesError
+from src.resolver import find_script_with_name, InvalidScriptNameError, ConflictingScriptNamesError
 
 def using_environment(variables):
     def wrapper(func):

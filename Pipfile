@@ -8,6 +8,7 @@ pyfakefs = "*"
 parameterized = "*"
 
 [scripts]
+app = "python ./src/main.py"
 test = "python -m unittest ./src/resolver_test.py"
 
 [requires]

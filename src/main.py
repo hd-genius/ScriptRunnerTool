@@ -18,14 +18,18 @@ def run_command(command):
         case "--help":
             print("help text")
         case _:
-            # throw error for unrecognized command
-            pass
+            raise UnrecognizedCommandError(command)
 
 def run_script():
     load_plugins()
     # find script
     # run script
     print("Hello World!")
+
+class UnrecognizedCommandError(Exception):
+    def __init__(self, command):
+        super()
+        self.command = command
 
 if __name__ == "__main__":
     main()

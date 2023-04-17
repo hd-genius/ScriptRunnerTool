@@ -5,7 +5,7 @@ from collections import namedtuple
 
 ScriptLocator = namedtuple('ScriptLocator', 'name path')
 
-def find_script_with_name(name: str) -> str:
+def find_script_with_name(name: str) -> callable:
     files_with_name = list(filter(lambda x: x.name == name, _find_scripts()))
     _verify_matching_scripts(name, files_with_name)
     return files_with_name[0].path

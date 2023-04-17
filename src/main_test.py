@@ -3,6 +3,7 @@ from unittest import TestCase
 from parameterized import parameterized
 from src.main import main, UnrecognizedCommandError
 
+
 class TestFindScriptWithName(TestCase):
     @parameterized.expand([
         ('--not-command'),
@@ -20,6 +21,7 @@ class TestFindScriptWithName(TestCase):
 
     def test_run_script(self):
         pass
+
 
 if __name__ == '__main__':
     unittest.main()

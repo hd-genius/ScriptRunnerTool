@@ -6,9 +6,13 @@ name = "pypi"
 [dev-packages]
 pyfakefs = "*"
 parameterized = "*"
+pep8 = "*"
+autopep8 = "*"
 
 [scripts]
 test = "python -m unittest discover -s src -p *_test.py"
+format = "autopep8 . -r --in-place"
+check-format = "pep8 ."
 
 [requires]
 python_version = "3.11"

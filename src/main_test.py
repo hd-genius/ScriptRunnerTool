@@ -1,6 +1,7 @@
 import unittest
 from unittest import TestCase
 from parameterized import parameterized
+from src.main import main, UnrecognizedCommandError
 
 class TestFindScriptWithName(TestCase):
     @parameterized.expand([
@@ -8,8 +9,8 @@ class TestFindScriptWithName(TestCase):
         ('--garbage'),
         ('--expected-fail')
     ])
-    def test_unrecognized_command_throws_error(self, command):
-        pass
+    def test_unrecognized_command(self, command):
+        self.assertRaises(UnrecognizedCommandError, main)
 
     def test_list_scripts(self):
         pass

@@ -20,12 +20,12 @@ def _verify_matching_scripts(script_name, scripts):
     elif (scripts_count > 1):
         raise ConflictingScriptNamesError(script_name, scripts)
 
+SCRIPTS_HOME_VARIABLE = "SCRIPT_RUNNER_DIR"
 
 def _find_scripts():
-    try:
-        scripts_location = os.environ['SCRIPT_RUNNER_DIR']
-    except KeyError:
-        raise ConfigurationError()
+    if SCRIPTS_HOME_VARIABLE not in os.environ:
+        raise ConfigurationError('The environment variable "SCRIPT_RUNNER_DIR" is not set.')
+    scripts_location = os.environ[SCRIPTS_HOME_VARIABLE]
     script_paths = list(
         filter(_is_script, _all_files_under_folder(scripts_location)))
     return map(_script_locator_for_path, script_paths)

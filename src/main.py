@@ -3,7 +3,7 @@
 import sys
 from plugins import load_plugins
 from commands import is_program_command, run_command
-from scripts import find_script_with_name
+from search import find_script_with_name
 from errors import ApplicationError
 
 

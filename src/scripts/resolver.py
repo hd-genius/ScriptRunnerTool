@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from collections import namedtuple
+from src.errors import InvalidScriptNameError, ConflictingScriptNamesError, ConfigurationError
 
 
 ScriptLocator = namedtuple('ScriptLocator', 'name path')
@@ -21,7 +22,10 @@ def _verify_matching_scripts(script_name, scripts):
 
 
 def _find_scripts():
-    scripts_location = os.environ['SCRIPTER_SCRIPTS']
+    try:
+        scripts_location = os.environ['SCRIPTER_SCRIPTS']
+    except KeyError:
+        raise ConfigurationError()
     script_paths = list(
         filter(_is_script, _all_files_under_folder(scripts_location)))
     return map(_script_locator_for_path, script_paths)
@@ -37,16 +41,3 @@ def _all_files_under_folder(folderPath: str):
 
 def _is_script(path: Path):
     return path.suffix in ['.ps1', '.py', '.js', '.sh']
-
-
-class InvalidScriptNameError(Exception):
-    def __init__(self, filename):
-        super()
-        self.filename = filename
-
-
-class ConflictingScriptNamesError(Exception):
-    def __init__(self, filename, conflicting_paths):
-        super()
-        self.filename = filename
-        self.conflicting_paths = conflicting_paths

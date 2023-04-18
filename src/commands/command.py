@@ -9,7 +9,7 @@ def register_command(name: str):
 
 
 def is_program_command(value: str) -> bool:
-    pass
+    return value in commands
 
 
 def run_command(command: str):

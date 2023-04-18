@@ -1,1 +1,1 @@
-from .plugins import load_plugins
+from .load import load_plugins

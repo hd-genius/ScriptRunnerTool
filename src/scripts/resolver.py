@@ -23,7 +23,7 @@ def _verify_matching_scripts(script_name, scripts):
 
 def _find_scripts():
     try:
-        scripts_location = os.environ['SCRIPTER_SCRIPTS']
+        scripts_location = os.environ['SCRIPT_RUNNER_DIR']
     except KeyError:
         raise ConfigurationError()
     script_paths = list(

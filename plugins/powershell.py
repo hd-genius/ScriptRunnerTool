@@ -1,6 +1,5 @@
 from pathlib import Path
-from api import register_handler, ScriptHandler
-from script import Script
+from api import register_handler, ScriptHandler, Script
 
 
 @register_handler

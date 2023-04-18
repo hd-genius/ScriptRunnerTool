@@ -8,6 +8,7 @@ class ConflictingScriptNamesError(ApplicationError):
         self.conflicting_paths = conflicting_paths
 
     def print(self):
-        print(f'More than one script with the name "{self.filename}" was found:')
+        print(
+            f'More than one script with the name "{self.filename}" was found:')
         for conflict in self.conflicting_paths:
             print(conflict)

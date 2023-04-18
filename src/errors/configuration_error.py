@@ -1,5 +1,5 @@
-from src.errors.application_error import ApplicationError
+from errors.application_error import ApplicationError
 
 
-class ConfigurationErro(ApplicationError):
+class ConfigurationError(ApplicationError):
     pass

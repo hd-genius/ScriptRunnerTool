@@ -1,4 +1,4 @@
-from src.errors.application_error import ApplicationError
+from errors.application_error import ApplicationError
 
 
 class ConflictingScriptNamesError(ApplicationError):

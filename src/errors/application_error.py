@@ -1,3 +1,3 @@
 class ApplicationError(Exception):
-    def print():
+    def print(self):
         print("An unexpected error was encountered")

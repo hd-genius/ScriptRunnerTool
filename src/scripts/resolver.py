@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from collections import namedtuple
-from src.errors import InvalidScriptNameError, ConflictingScriptNamesError, ConfigurationError
+from errors import InvalidScriptNameError, ConflictingScriptNamesError, ConfigurationError
 
 
 ScriptLocator = namedtuple('ScriptLocator', 'name path')

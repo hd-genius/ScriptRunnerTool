@@ -22,7 +22,8 @@ def find_all_scripts() -> list[Script]:
         raise ConfigurationError(
             'The environment variable "SCRIPT_RUNNER_DIR" is not set.')
     scripts_location = os.environ[SCRIPTS_HOME_VARIABLE]
-    script_paths = [x for x in _all_files_under_folder(scripts_location) if _is_script(x)]
+    script_paths = [x for x in _all_files_under_folder(
+        scripts_location) if _is_script(x)]
     return [script for path in script_paths for script in _all_scripts_for_file(path)]
 
 

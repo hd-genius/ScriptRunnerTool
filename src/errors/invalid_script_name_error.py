@@ -7,4 +7,4 @@ class InvalidScriptNameError(ApplicationError):
         self.filename = filename
 
     def print(self):
-        print("The script was not found")
+        print(f'No script was found with the name "{self.filename}".')

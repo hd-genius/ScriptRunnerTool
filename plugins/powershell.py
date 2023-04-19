@@ -1,4 +1,5 @@
 from pathlib import Path
+import subprocess
 from api import register_handler, ScriptHandler, Script
 
 @register_handler
@@ -19,4 +20,4 @@ class PowerShellScript(Script):
         self.path = file
 
     def execute(self):
-        print("a powershell script would be executed")
+        subprocess.run(f"PowerShell -File {self.path}")

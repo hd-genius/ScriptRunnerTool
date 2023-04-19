@@ -1,13 +1,12 @@
 from pathlib import Path
 from api import register_handler, ScriptHandler, Script
 
-
 @register_handler
 class PowershellHandler(ScriptHandler):
-    def can_handle(file: Path) -> bool:
-        return file.suffix is ".ps1"
+    def can_handle(self, file: Path) -> bool:
+        return file.suffix == ".ps1"
 
-    def create_script_for(file: Path) -> Script:
+    def create_script_for(self, file: Path) -> Script:
         return PowerShellScript(file)
 
 
@@ -16,8 +15,8 @@ class PowerShellScript(Script):
     path = ""
     def __init__(self, file: Path) -> None:
         super().__init__()
-        self.name = file.name
+        self.name = file.stem
         self.path = file
 
-    def execute():
-        pass
+    def execute(self):
+        print("a powershell script would be executed")

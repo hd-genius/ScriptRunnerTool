@@ -11,7 +11,7 @@ SCRIPTS_HOME_VARIABLE = "SCRIPT_RUNNER_DIR"
 
 
 def find_script_with_name(name: str) -> Script:
-    scripts_with_name = [x for x in find_all_scripts() if x.name is name]
+    scripts_with_name = [x for x in find_all_scripts() if x.name == name]
     _verify_matching_scripts(name, scripts_with_name)
     return scripts_with_name[0]
 

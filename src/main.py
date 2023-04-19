@@ -21,7 +21,7 @@ def main():
 def run_script(script_name):
     load_plugins()
     script_to_run = find_script_with_name(script_name)
-    script_to_run()
+    script_to_run.execute()
 
 
 if __name__ == "__main__":

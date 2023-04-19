@@ -12,12 +12,8 @@ class PowershellHandler(ScriptHandler):
 
 
 class PowerShellScript(Script):
-    name = ""
-    path = ""
     def __init__(self, file: Path) -> None:
-        super().__init__()
-        self.name = file.stem
-        self.path = file
+        super().__init__(file)
 
     def execute(self):
         subprocess.run(f"PowerShell -File {self.path}")

@@ -9,6 +9,7 @@ from errors import ApplicationError
 
 def main():
     try:
+        load_plugins()
         first_argument = sys.argv[1]
         if (is_program_command(first_argument)):
             run_command(first_argument)
@@ -19,7 +20,6 @@ def main():
 
 
 def run_script(script_name):
-    load_plugins()
     script_to_run = find_script_with_name(script_name)
     script_to_run.execute()
 

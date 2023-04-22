@@ -14,7 +14,7 @@ def using_environment(variables):
     return wrapper
 
 
-class TestFindScriptWithName(TestCase):
+class TestFindScriptWithName():
 
     def setUp(self):
         self.setUpPyfakefs()

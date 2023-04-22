@@ -13,6 +13,7 @@ autopep8 = "*"
 test = "python -m unittest discover -s src -p *_test.py"
 format = "autopep8 . -r --in-place"
 check-format = "pep8 ."
+lint = ""
 
 [requires]
 python_version = "3.11"

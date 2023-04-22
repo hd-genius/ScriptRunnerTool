@@ -2,6 +2,7 @@ from pathlib import Path
 import subprocess
 from api import register_handler, ScriptHandler, Script
 
+
 @register_handler
 class PowershellHandler(ScriptHandler):
     def can_handle(self, file: Path) -> bool:

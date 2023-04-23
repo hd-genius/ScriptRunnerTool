@@ -1,3 +1,15 @@
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [What is runr](#what-is-runr)
+- [Installation](#installation)
+  - [Pip](#pip)
+    - [Install Python](#install-python)
+    - [Install PyPi package](#install-pypi-package)
+- [Ussage](#ussage)
+  - [Get help](#get-help)
+  - [List available scripts](#list-available-scripts)
+  - [Run a script](#run-a-script)
+
 # What is runr
 
 runr is command line utility that allows you to run custom scripts from anywhere on your system.

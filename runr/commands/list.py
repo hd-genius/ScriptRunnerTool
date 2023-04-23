@@ -1,5 +1,5 @@
 from .command import register_command
-from search import find_all_scripts
+from runr.search import find_all_scripts
 
 
 @register_command("--list")

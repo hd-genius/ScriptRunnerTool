@@ -1,6 +1,6 @@
 from pathlib import Path
 import subprocess
-from api import register_handler, ScriptHandler, Script
+from runr.api import register_handler, ScriptHandler, Script
 
 
 @register_handler

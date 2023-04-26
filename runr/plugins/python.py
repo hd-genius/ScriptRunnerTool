@@ -1,1 +1,1 @@
-S:/Source/script-runner-tool/plugins/python.py
+C:/Users/royth/Source/ScriptRunnerTool/plugins/python.py

@@ -1,1 +1,0 @@
-C:/Users/royth/Source/ScriptRunnerTool/plugins/python.py

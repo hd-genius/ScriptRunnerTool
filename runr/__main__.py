@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 import sys
-from plugins import load_plugins
-from commands import is_program_command, run_command
-from search import find_script_with_name
-from errors import ApplicationError
+from runr.plugins import load_plugins
+from runr.commands import is_program_command, run_command
+from runr.search import find_script_with_name
+from runr.errors import ApplicationError
 
 
 def main():

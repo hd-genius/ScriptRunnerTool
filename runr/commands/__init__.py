@@ -1,3 +1,3 @@
 from .command import is_program_command, run_command
-import commands.help
-import commands.list
+import runr.commands.help
+import runr.commands.list
